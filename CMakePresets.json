@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "vcpkg-ninja-debug",
+            "description": "使用Ninja生成器和Vcpkg工具链",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE" : "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS" :"ON",
+                "CMAKE_TOOLCHAIN_FILE" : "/home/sola/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET" : "x64-linux"
+            }
+        }
+    ]
+}
