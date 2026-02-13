@@ -11,7 +11,8 @@
                 "CMAKE_BUILD_TYPE" : "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS" :"ON",
                 "CMAKE_TOOLCHAIN_FILE" : "/home/sola/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_TARGET_TRIPLET" : "x64-linux"
+                "VCPKG_TARGET_TRIPLET" : "x64-linux",
+                "VCPKG_MANIFEST_MODE" : "ON"
             }
         }
     ]
