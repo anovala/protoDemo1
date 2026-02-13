@@ -28,7 +28,7 @@ int main(int, char**){
     if(parsed_user.ParseFromString(serialized_data))
     {
         fmt::print(fg(fmt::color::yellow), "\n---反序列化结果----\n");
-        fmt::print("User: [ID: {} Name: {}\n]",parsed_user.id(), parsed_user.name());
+        fmt::print("User: [ID: {} Name: {}]\n",parsed_user.id(), parsed_user.name());
     }
 
     return 0;

@@ -1,18 +1,61 @@
 {
     "version": 3,
     "configurePresets": [
+        // {
+        //     "name": "default",
+        //     "displayName": "vcpkg-ninja-debug",
+        //     "description": "使用Ninja生成器和Vcpkg工具链",
+        //     "generator": "Ninja",
+        //     "binaryDir": "${sourceDir}/build",
+        //     "architecture" : {
+        //         "value": "x64",
+        //         "strategy": "external"
+        //     },
+        //     "toolset":{
+        //         "value": "x64",
+        //         "strategy": "external"
+        //     },
+        //     "cacheVariables": {
+        //         "CMAKE_BUILD_TYPE" : "Debug",
+        //         "CMAKE_EXPORT_COMPILE_COMMANDS" :"ON",
+        //         "CMAKE_TOOLCHAIN_FILE" : "C:/Users/38614/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        //         "CMAKE_C_COMPILER" : "cl",
+        //         "CMAKE_CXX_COMPILER" : "cl",
+        //         "VCPKG_TARGET_TRIPLET" : "x64-windows",
+        //         "VCPKG_MANIFEST_MODE" : "ON"
+        //     }
+        // },
         {
-            "name": "default",
-            "displayName": "vcpkg-ninja-debug",
-            "description": "使用Ninja生成器和Vcpkg工具链",
+            "name": "base",
+            "hidden": true,
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE" : "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS" :"ON",
-                "CMAKE_TOOLCHAIN_FILE" : "/home/sola/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_TARGET_TRIPLET" : "x64-linux",
-                "VCPKG_MANIFEST_MODE" : "ON"
+                "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON",
+                "VCPKG_MANIFEST_MODE" : "ON",
+                "CMAKE_BUILD_TYPE" : "Debug"
+            }
+        },
+        {
+            "name": "linux-debug",
+            "displayName": "Linux Ninja Debug",
+            "inherits" : "base",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE" :"/home/sola/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET" : "x64-linux"
+            }
+        },
+        {
+            "name": "windows-debug",
+            "displayName": "Windows MSVC Ninja Debug",
+            "inherits" : "base",
+            "architecture" : { "value": "x64", "strategy": "external"},
+            "toolset" : {"value": "host=x64", "strategy": "external"},
+            "cacheVariables": {
+                "CMAKE_C_COMPILER" : "cl",
+                "CMAKE_CXX_COMPILER" : "cl",
+                "CMAKE_TOOLCHAIN_FILE" : "C:/Users/38614/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET" : "x64-windows"
             }
         }
     ]
