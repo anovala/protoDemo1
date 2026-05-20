@@ -4,11 +4,13 @@
 #include <iostream>
 #include "user.pb.h"
 
-int main(int, char**){
+int main(){
+
+    std::string name = "sola";
 
     demo::User user;
     user.set_id(101);
-    user.set_name("Sola");
+    user.set_name(name);
     user.set_email("sola@example.com");
     
     fmt::print(fg(fmt::color::cyan), "--- 原始数据 (fmt) ---\n");

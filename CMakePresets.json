@@ -1,30 +1,6 @@
 {
     "version": 3,
     "configurePresets": [
-        // {
-        //     "name": "default",
-        //     "displayName": "vcpkg-ninja-debug",
-        //     "description": "使用Ninja生成器和Vcpkg工具链",
-        //     "generator": "Ninja",
-        //     "binaryDir": "${sourceDir}/build",
-        //     "architecture" : {
-        //         "value": "x64",
-        //         "strategy": "external"
-        //     },
-        //     "toolset":{
-        //         "value": "x64",
-        //         "strategy": "external"
-        //     },
-        //     "cacheVariables": {
-        //         "CMAKE_BUILD_TYPE" : "Debug",
-        //         "CMAKE_EXPORT_COMPILE_COMMANDS" :"ON",
-        //         "CMAKE_TOOLCHAIN_FILE" : "C:/Users/38614/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
-        //         "CMAKE_C_COMPILER" : "cl",
-        //         "CMAKE_CXX_COMPILER" : "cl",
-        //         "VCPKG_TARGET_TRIPLET" : "x64-windows",
-        //         "VCPKG_MANIFEST_MODE" : "ON"
-        //     }
-        // },
         {
             "name": "base",
             "hidden": true,
@@ -56,6 +32,26 @@
                 "CMAKE_CXX_COMPILER" : "cl",
                 "CMAKE_TOOLCHAIN_FILE" : "C:/Users/38614/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET" : "x64-windows"
+            }
+        },
+        {
+            "name": "qt-windows-debug",
+            "displayName": "Qt Vscode MSVC Debug",
+            "inherits" : "windows-debug",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "QT_CREATOR_SPECIFIC" : "ON",
+                "CMAKE_TOOLCHAIN_FILE" : "C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6/qt.toolchain.cmake",
+                "QT_CHAINLOAD_TOOLCHAIN_FILE" : "C:/Users/38614/opensrc/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "qtcreator-windows-debug",
+            "displayName": "Qt Creator MSVC Debug",
+            "inherits" : "windows-debug",
+            "binaryDir": "${sourceDir}/qtcreator-build",
+            "cacheVariables": {
+                "QT_CREATOR_SPECIFIC" : "ON"
             }
         }
     ]

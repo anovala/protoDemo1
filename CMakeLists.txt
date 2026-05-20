@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10.0)
 project(protoDemo1 VERSION 0.1.0 LANGUAGES C CXX)
 
 find_package(protobuf CONFIG REQUIRED)
+
+message(STATUS "Current Protoc Path: ${protobuf_MSVC_LOCATION}/protoc.exe")
+
 find_package(fmt CONFIG REQUIRED)
 
 add_executable(protoDemo1 

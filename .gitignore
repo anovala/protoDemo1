@@ -1,4 +1,7 @@
 build/
 bin/
-
+qt-build/
 .vscode/
+
+CMakeLists.txt.user
+.vs/
